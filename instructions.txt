@@ -1,0 +1,4 @@
+install the following
+cv 
+mediapipe
+tensorflow
