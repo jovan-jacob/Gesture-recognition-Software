@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Actions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+            <h1>Enter Action Names</h1>
+            <form action="{{ url_for('submit_actions') }}" method="POST">
+                {% for i in range(num_actions) %}
+                    <label for="action_{{ i }}">Action {{ i + 1 }}:</label>
+                    <input type="text" id="action_{{ i }}" name="action_{{ i }}" required>
+                {% endfor %}
+                <input type="submit" value="Submit Actions">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

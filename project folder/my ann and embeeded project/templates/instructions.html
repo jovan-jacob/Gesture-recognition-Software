@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+            <h1>Training Instructions</h1>
+            <p>Please follow the steps below to collect training data:</p>
+            <ol>
+                <li>Step 1: Position yourself in front of the camera.</li>
+                <li>Step 2: Perform the action as instructed.</li>
+                <li>Step 3: Wait for the camera to capture the data.</li>
+            </ol>
+
+            <form action="{{ url_for('instructions') }}" method="POST">
+                <input type="submit" value="Process" />
+            </form>
+
+            <button onclick="location.href='{{ url_for('index') }}'">Back to Home</button>
+        </div>
+    </div>
+</body>
+</html>

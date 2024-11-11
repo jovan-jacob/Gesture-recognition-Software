@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+            <h1>Model Training</h1>
+            {% if model_created %}
+                <p class="message success">Model has been created!</p>
+                <button onclick="location.href='{{ url_for('test') }}'">Test</button>
+            {% else %}
+                <p class="message error">Model hasn't been created yet.</p>
+                <button onclick="location.href='{{ url_for('train') }}'">Train</button>
+            {% endif %}
+            <button onclick="location.href='{{ url_for('exit') }}'">Exit</button>
+        </div>
+    </div>
+</body>
+</html>
